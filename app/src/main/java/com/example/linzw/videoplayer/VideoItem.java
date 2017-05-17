@@ -26,6 +26,28 @@ public class VideoItem {
         Date  date=new Date(Long.valueOf(createTime)*1000);
         this.createTime=dateFormer.format(date);
 
-        this.thumbPicture=ThumbnailUtils.createVideoThumbnail(path,MediaStore.Images.Thumbnails.MINI_KIND);
+        //this.thumbPicture=ThumbnailUtils.createVideoThumbnail(path,MediaStore.Images.Thumbnails.MINI_KIND);
+    }
+
+    public void createThumbnail()
+    {
+        if(thumbPicture==null)
+        {
+            thumbPicture=ThumbnailUtils.createVideoThumbnail(path,MediaStore.Images.Thumbnails.MINI_KIND);
+        }
+    }
+
+    public void releaseThumbnail()
+    {
+        if(thumbPicture!=null)
+        {
+            thumbPicture=null;
+        }
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        VideoItem another=(VideoItem) obj;
+        return (this.path.equals(another.path));
     }
 }

@@ -61,7 +61,7 @@ public class VideoItemAdaptor extends ArrayAdapter<VideoItem> {
 
         if(convertView==null)
         {
-            convertView=mInflater.inflate(mResouce,parent);
+            convertView=mInflater.inflate(mResouce,parent,false);
         }
         ImageView imgview=(ImageView)convertView.findViewById(R.id.imageview);
         imgview.setImageBitmap(item.thumbPicture);

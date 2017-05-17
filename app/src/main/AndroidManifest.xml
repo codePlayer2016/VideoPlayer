@@ -16,10 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <provider
-            android:name=".MyContentProvider"
-            android:authorities="com.anddle.videoplayer"
-            android:exported="false" />
     </application>
 
 </manifest>
